@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link, Head } from '@inertiajs/inertia-react';
+import Navbar from "@/Components/Navbar";
+
 
 export default function Homepage(props) {
     return (
-        <div className='flex justify-center items-center min-h-screen bg-neutral-100'>
+        <div className='min-h-screen bg-neutral-100'>
             <Head title={props.title} />
+            <Navbar />
             {/*<p>{props.description}</p>*/}
             <div>
                 {props.news ? props.news.map((data, i) => {

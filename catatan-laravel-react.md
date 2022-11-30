@@ -29,4 +29,23 @@ php artisan make:seeder NewsSeeder
 * Lalu buat struktur data dummy, isikan sesuai dengan nama kolom pada DB News
 * Lalu jalankan `php artisan db:seed --class=NewsSeeder`
 * Dan jalankan `php artisan migrate`
-6. Membuat
+6. Membuat Factories News
+```shell
+php artisan make:factory NewsFactory
+```
+* lalu isi field pada `NewsFactory` seperti di `NewsSeeder`
+* Setelah membuat field pada `NewsFactory` jalankan command migrate dan seed
+```shell
+php artisan migrate
+
+php artisan db:seed --class=NewsSeeder
+
+php artisan migrate:refresh --seeder
+```
+7. Membuat Navbar dengan DaisyUI
+* masuk pada web https://daisyui.com
+* install paket daisy dengan perintah `npm i daisyui`
+* buat componen `Navbar.jsx` pada folder `Components`
+* copas template navbar dari web daisyui https://daisyui.com/components/navbar/
+* panggil className Navbar pada `Homepage.jsx`
+8. 

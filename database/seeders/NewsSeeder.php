@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
+
 class NewsSeeder extends Seeder
 {
     /**
@@ -16,13 +17,6 @@ class NewsSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 19; $i++) {
-            DB::table('news')->insert([
-                'title' => fake()->title(),
-                'description' => fake()->paragraph(2, true),
-                'category' => fake()->sentence(),
-                'author' => fake()->email(),
-            ]);
-        }
+         News::factory(50)->create();
     }
 }
