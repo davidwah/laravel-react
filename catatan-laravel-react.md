@@ -48,4 +48,11 @@ php artisan migrate:refresh --seeder
 * buat componen `Navbar.jsx` pada folder `Components`
 * copas template navbar dari web daisyui https://daisyui.com/components/navbar/
 * panggil className Navbar pada `Homepage.jsx`
-8. 
+
+8. Membuat Pagination
+create resource NewsCollection dengan menjalankan perintah berikut:
+```shell
+php artisan make:resource NewsCollection
+```
+9. Membuat
+10. 
