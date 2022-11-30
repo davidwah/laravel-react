@@ -18,7 +18,7 @@ class NewsController extends Controller
     public function index()
     {
         //
-        $news = new NewsCollection(News::paginate(8));
+        $news = new NewsCollection(News::OrderByDesc('id')->paginate(8));
         return Inertia::render('Homepage', [
             'title' => 'DWPNews',
             'description' => 'Selamat Datang Cuys News!',
@@ -61,7 +61,11 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        //
+        $myNews = $news::where('author', auth()->user()->email)->get();
+        return Inertia::render('Dashboard', [
+            'myNews' => $myNews,
+        ]);
+
     }
 
     /**
@@ -70,9 +74,12 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function edit(News $news)
+    public function edit(News $news, Request $request)
     {
         //
+        return Inertia::render('EditNews', [
+            'myNews' => $news->find($request->id)
+        ]);
     }
 
     /**
@@ -82,9 +89,14 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(Request $request )
     {
-        //
+        News::where('author', auth()->user()->email)->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'description' => $request->description,
+        ]);
+        return  to_route('dasboard')->with('message', 'update berita berhasil');
     }
 
     /**
