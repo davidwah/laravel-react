@@ -2,7 +2,6 @@ import {Link} from "@inertiajs/inertia-react";
 
 
 const Navbar = ({user}) => {
-    console.log('usersss: ', user)
     return (
         <div className="navbar bg-base-100">
             <div className="flex-1">
@@ -33,8 +32,8 @@ const Navbar = ({user}) => {
                                         <span className="badge">New</span>
                                     </Link>
                                 </li>
-                                <li><Link href={route('login')} as="button" >Settings</Link></li>
-                                <li><Link href={route('login')} as="button">Logout</Link></li>
+                                <li><Link >Settings</Link></li>
+                                <li><Link href={route('logout')} method="post" as="button">Logout</Link></li>
                             </>
                         }
                     </ul>
