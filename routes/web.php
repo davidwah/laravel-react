@@ -21,6 +21,7 @@ Route::post('/news',[\App\Http\Controllers\NewsController::class, 'store'])->mid
 Route::get('/news',[\App\Http\Controllers\NewsController::class, 'show'])->middleware(['auth', 'verified'])->name('my.news');
 Route::get('/news/edit',[\App\Http\Controllers\NewsController::class, 'edit'])->middleware(['auth', 'verified'])->name('edit.news');
 Route::post('/news/update',[\App\Http\Controllers\NewsController::class, 'update'])->middleware(['auth', 'verified'])->name('update.news');
+Route::post('/news/delete',[\App\Http\Controllers\NewsController::class, 'destroy'])->middleware(['auth', 'verified'])->name('delete.news');
 
 
 Route::get('/dashboard', function () {
