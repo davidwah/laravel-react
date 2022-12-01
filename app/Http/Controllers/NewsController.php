@@ -91,12 +91,12 @@ class NewsController extends Controller
      */
     public function update(Request $request )
     {
-        News::where('author', auth()->user()->email)->update([
+        News::where('id', $request->id)->update([
             'title' => $request->title,
             'description' => $request->description,
             'description' => $request->description,
         ]);
-        return  to_route('dasboard')->with('message', 'update berita berhasil');
+        return  to_route('dashboard')->with('message', 'update berita berhasil');
     }
 
     /**
