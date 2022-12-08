@@ -54,5 +54,4 @@ create resource NewsCollection dengan menjalankan perintah berikut:
 ```shell
 php artisan make:resource NewsCollection
 ```
-9. Membuat
-10. 
+> lanjut!!!
