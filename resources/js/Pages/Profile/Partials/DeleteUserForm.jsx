@@ -1,11 +1,11 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import DangerButton from '@/Components/DangerButton';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import Modal from '@/Components/Modal';
 import SecondaryButton from '@/Components/SecondaryButton';
 import TextInput from '@/Components/TextInput';
-import { useForm } from '@inertiajs/inertia-react';
+import { useForm } from '@inertiajs/react';
 
 export default function DeleteUserForm({ className }) {
     const [confirmingUserDeletion, setConfirmingUserDeletion] = useState(false);
@@ -59,7 +59,7 @@ export default function DeleteUserForm({ className }) {
             <Modal show={confirmingUserDeletion} onClose={closeModal}>
                 <form onSubmit={deleteUser} className="p-6">
                     <h2 className="text-lg font-medium text-gray-900">
-                        Are you sure your want to delete your account?
+                        Are you sure you want to delete your account?
                     </h2>
 
                     <p className="mt-1 text-sm text-gray-600">
@@ -68,7 +68,7 @@ export default function DeleteUserForm({ className }) {
                     </p>
 
                     <div className="mt-6">
-                        <InputLabel for="password" value="Password" className="sr-only" />
+                        <InputLabel htmlFor="password" value="Password" className="sr-only" />
 
                         <TextInput
                             id="password"
@@ -76,7 +76,7 @@ export default function DeleteUserForm({ className }) {
                             name="password"
                             ref={passwordInput}
                             value={data.password}
-                            handleChange={(e) => setData('password', e.target.value)}
+                            onChange={(e) => setData('password', e.target.value)}
                             className="mt-1 block w-3/4"
                             isFocused
                             placeholder="Password"
@@ -88,7 +88,7 @@ export default function DeleteUserForm({ className }) {
                     <div className="mt-6 flex justify-end">
                         <SecondaryButton onClick={closeModal}>Cancel</SecondaryButton>
 
-                        <DangerButton className="ml-3" processing={processing}>
+                        <DangerButton className="ml-3" disabled={processing}>
                             Delete Account
                         </DangerButton>
                     </div>

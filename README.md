@@ -7,20 +7,38 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Run project
+* Clone this repository project on your local 
+```shell
+git clone https://github.com/davidwah/laravel-react.git
+```
+* Install package depedency
+```shell
+npm install 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+composer require laravel/breeze --dev
+```
+* Breeze & Blade
+```
+php artisan breeze:install react
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* Run Project  
+run this command on same time
+```
+npm run dev
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
+php artisan serve
+```
+* Preview project  
+**Welcome page**
+![](resources/image/1.Welcome-Laravel.png)  
+**Home page**
+![](resources/image/2.Dashboard-Laravel.png)  
+**Login page**  
+![](resources/image/3.Login-Laravel.png)  
+**Register page**  
+![](resources/image/4.Register-Laravel.png)
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
